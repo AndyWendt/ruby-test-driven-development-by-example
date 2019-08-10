@@ -1,6 +1,7 @@
 require 'rspec'
+include RSpec
 
-describe 'MyBehavior' do
+RSpec.describe 'MyBehavior' do
   before do
     # Do nothing
   end
