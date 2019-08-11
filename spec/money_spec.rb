@@ -24,4 +24,12 @@ RSpec.describe 'Money' do
                  .eq?(::Money::Dollar.new(6))).to eq(false)
     end
   end
+
+  context 'Franc' do
+    it 'multiplies' do
+      five = ::Money::Franc.new(5)
+      expect(::Money::Franc.new(10)).to eq(five.times(2))
+      expect(::Money::Franc.new(15)).to eq(five.times(3))
+    end
+  end
 end
