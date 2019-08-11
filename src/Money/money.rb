@@ -6,7 +6,7 @@ module Money
     end
 
     def ==(money)
-      @amount === money.amount && money.class.name === self.class.name
+      @amount === money.amount && money.currency === @currency
     end
 
     def self.dollar(amount)
