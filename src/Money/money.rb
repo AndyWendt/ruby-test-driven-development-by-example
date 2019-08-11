@@ -1,7 +1,8 @@
 module Money
   class Money
-    def initialize(amount)
+    def initialize(amount, currency)
       @amount = amount
+      @currency = currency
     end
 
     def ==(money)
@@ -9,11 +10,11 @@ module Money
     end
 
     def self.dollar(amount)
-      Dollar.new(amount)
+      Dollar.new(amount, 'USD')
     end
 
     def self.franc(amount)
-      Franc.new(amount)
+      Franc.new(amount, 'CHF')
     end
   end
 
@@ -21,11 +22,11 @@ module Money
     attr_reader :amount
 
     def times(multiplier)
-      Dollar.new(@amount * multiplier)
+      Dollar.new(@amount * multiplier, 'USD')
     end
 
     def currency
-      'USD'
+      @currency
     end
   end
 
@@ -33,11 +34,11 @@ module Money
     attr_reader :amount
 
     def times(multiplier)
-      Franc.new(@amount * multiplier)
+      Franc.new(@amount * multiplier, 'CHF')
     end
 
     def currency
-      'CHF'
+      @currency
     end
   end
 end
