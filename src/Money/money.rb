@@ -22,7 +22,7 @@ module Money
     attr_reader :amount
 
     def times(multiplier)
-      Dollar.new(@amount * multiplier, 'USD')
+      Money.dollar(@amount * multiplier)
     end
 
     def currency
@@ -34,7 +34,7 @@ module Money
     attr_reader :amount
 
     def times(multiplier)
-      Franc.new(@amount * multiplier, 'CHF')
+      Money.franc(@amount * multiplier)
     end
 
     def currency
