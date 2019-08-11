@@ -17,7 +17,7 @@ module Money
     end
   end
 
-  class Franc
+  class Franc < Money
     attr_reader :amount
 
     def initialize(amount)
@@ -26,10 +26,6 @@ module Money
 
     def times(multiplier)
       Franc.new(@amount * multiplier)
-    end
-
-    def ==(franc)
-      @amount === franc.amount
     end
   end
 end
