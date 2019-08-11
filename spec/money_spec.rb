@@ -31,7 +31,7 @@ RSpec.describe 'Money' do
       expect(::Money::Money.dollar(5)).not_to eq(::Money::Money.dollar(6))
       expect(::Money::Money.franc(5)).to eq(::Money::Money.franc(5))
       expect(::Money::Money.franc(5)).not_to eq(::Money::Money.franc(6))
-      expect(::Money::Money.franc(5)).not_to eq(::Money::Dollar.new(5))
+      expect(::Money::Money.franc(5)).not_to eq(::Money::Money.dollar(5))
     end
   end
 end
