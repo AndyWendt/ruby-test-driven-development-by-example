@@ -10,7 +10,7 @@ module Money
       Dollar.new(@amount * multiplier)
     end
 
-    def equals(dollar)
+    def ==(dollar)
       @amount === dollar.amount
     end
   end

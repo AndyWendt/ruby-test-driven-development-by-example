@@ -13,17 +13,15 @@ RSpec.describe 'Money' do
   context 'Dollar' do
     it 'multiplies' do
       five = ::Money::Dollar.new(5)
-      product = five.times(2)
-      expect(product.amount).to eq(10)
-      product = five.times(3)
-      expect(product.amount).to eq(15)
+      expect(::Money::Dollar.new(10)).to eq(five.times(2))
+      expect(::Money::Dollar.new(15)).to eq(five.times(3))
     end
 
     it 'compares equality' do
       expect(::Money::Dollar.new(5)
-                 .equals(::Money::Dollar.new(5))).to eq(true)
+                 .eq?(::Money::Dollar.new(5))).to eq(true)
       expect(::Money::Dollar.new(5)
-                 .equals(::Money::Dollar.new(6))).to eq(false)
+                 .eq?(::Money::Dollar.new(6))).to eq(false)
     end
   end
 end
