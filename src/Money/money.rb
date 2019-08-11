@@ -28,8 +28,8 @@ module Money
       Franc.new(@amount * multiplier)
     end
 
-    def ==(dollar)
-      @amount === dollar.amount
+    def ==(franc)
+      @amount === franc.amount
     end
   end
 end
