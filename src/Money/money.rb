@@ -7,6 +7,10 @@ module Money
     def ==(money)
       @amount === money.amount && money.class.name === self.class.name
     end
+
+    def self.dollar(amount)
+      Dollar.new(amount)
+    end
   end
 
   class Dollar < Money
