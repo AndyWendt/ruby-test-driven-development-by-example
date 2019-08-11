@@ -1,5 +1,7 @@
 module Money
   class Money
+    attr_reader :amount
+
     def initialize(amount, currency)
       @amount = amount
       @currency = currency
@@ -16,29 +18,21 @@ module Money
     def self.franc(amount)
       Franc.new(amount, 'CHF')
     end
-  end
-
-  class Dollar < Money
-    attr_reader :amount
-
-    def times(multiplier)
-      Money.dollar(@amount * multiplier)
-    end
 
     def currency
       @currency
+    end
+  end
+
+  class Dollar < Money
+    def times(multiplier)
+      Money.new(@amount * multiplier, currency)
     end
   end
 
   class Franc < Money
-    attr_reader :amount
-
     def times(multiplier)
-      Money.franc(@amount * multiplier)
-    end
-
-    def currency
-      @currency
+      Money.new(@amount * multiplier, currency)
     end
   end
 end
