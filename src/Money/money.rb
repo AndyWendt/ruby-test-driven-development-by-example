@@ -23,6 +23,10 @@ module Money
     def times(multiplier)
       Dollar.new(@amount * multiplier)
     end
+
+    def currency
+      'USD'
+    end
   end
 
   class Franc < Money
@@ -34,6 +38,10 @@ module Money
 
     def times(multiplier)
       Franc.new(@amount * multiplier)
+    end
+
+    def currency
+      'CHF'
     end
   end
 end

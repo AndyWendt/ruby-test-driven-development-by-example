@@ -11,6 +11,11 @@ RSpec.describe 'Money' do
   end
 
   context 'Money' do
+    it 'tests a currency' do
+      expect(::Money::Money.dollar(5).currency).to eq('USD')
+      expect(::Money::Money.franc(5).currency).to eq('CHF')
+    end
+
     it 'multiplies' do
       five = ::Money::Money.dollar(5)
       expect(::Money::Money.dollar(10)).to eq(five.times(2))
