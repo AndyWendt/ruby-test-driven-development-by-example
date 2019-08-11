@@ -4,8 +4,8 @@ module Money
       @amount = amount
     end
 
-    def ==(dollar)
-      @amount === dollar.amount
+    def ==(money)
+      @amount === money.amount
     end
   end
 
