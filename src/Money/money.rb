@@ -12,27 +12,25 @@ module Money
     end
 
     def self.dollar(amount)
-      Dollar.new(amount, 'USD')
+      Money.new(amount, 'USD')
     end
 
     def self.franc(amount)
-      Franc.new(amount, 'CHF')
+      Money.new(amount, 'CHF')
     end
 
     def currency
       @currency
     end
+
+    def times(multiplier)
+      Money.new(@amount * multiplier, currency)
+    end
   end
 
   class Dollar < Money
-    def times(multiplier)
-      Money.new(@amount * multiplier, currency)
-    end
   end
 
   class Franc < Money
-    def times(multiplier)
-      Money.new(@amount * multiplier, currency)
-    end
   end
 end
