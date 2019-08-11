@@ -18,5 +18,9 @@ RSpec.describe 'Money' do
       product = five.times(3)
       expect(product.amount).to eq(15)
     end
+
+    it 'compares equality' do
+      expect(::Money::Dollar.new(5).equals(::Money::Dollar.new(5))).to eq(true)
+    end
   end
 end
