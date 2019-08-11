@@ -1,10 +1,12 @@
 module Money
   class Dollar
-    def times(number)
+    attr_reader :amount
+
+    def initialize
+      @amount = 10
     end
 
-    def amount
-      10
+    def times(multiplier)
     end
   end
 end
