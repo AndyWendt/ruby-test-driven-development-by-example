@@ -12,7 +12,7 @@ RSpec.describe 'Money' do
 
   context 'Money' do
     it 'tests different class equality' do
-      expect(::Money::Money.new(5, 'CHF')).to eq(::Money::Franc.new(5, 'CHF'))
+      expect(::Money::Money.new(5, 'CHF')).to eq(::Money::Money.new(5, 'CHF'))
     end
 
     it 'tests a currency' do

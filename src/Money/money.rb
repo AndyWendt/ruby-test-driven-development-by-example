@@ -27,10 +27,4 @@ module Money
       Money.new(@amount * multiplier, currency)
     end
   end
-
-  class Dollar < Money
-  end
-
-  class Franc < Money
-  end
 end
