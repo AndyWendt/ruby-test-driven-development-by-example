@@ -1,7 +1,7 @@
 require 'rspec'
 include RSpec
 
-RSpec.describe 'MyBehavior' do
+RSpec.describe 'Money' do
   before do
     # Do nothing
   end
@@ -10,9 +10,11 @@ RSpec.describe 'MyBehavior' do
     # Do nothing
   end
 
-  context 'when condition' do
-    it 'succeeds' do
-      pending 'Not implemented'
+  context 'Dollar' do
+    it 'multiplies' do
+      five = ::Money::Dollar.new
+      five.times(2)
+      expect(five.amount).to eq(10)
     end
   end
 end
