@@ -12,7 +12,7 @@ RSpec.describe 'Money' do
 
   context 'Dollar' do
     it 'multiplies' do
-      five = ::Money::Dollar.new
+      five = ::Money::Dollar.new(5)
       five.times(2)
       expect(five.amount).to eq(10)
     end
