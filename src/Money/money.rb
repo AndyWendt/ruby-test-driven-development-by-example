@@ -11,7 +11,7 @@ module Money
     end
 
     def equals(dollar)
-      true
+      @amount === dollar.amount
     end
   end
 end

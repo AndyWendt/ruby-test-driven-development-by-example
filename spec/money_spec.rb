@@ -20,7 +20,10 @@ RSpec.describe 'Money' do
     end
 
     it 'compares equality' do
-      expect(::Money::Dollar.new(5).equals(::Money::Dollar.new(5))).to eq(true)
+      expect(::Money::Dollar.new(5)
+                 .equals(::Money::Dollar.new(5))).to eq(true)
+      expect(::Money::Dollar.new(5)
+                 .equals(::Money::Dollar.new(6))).to eq(false)
     end
   end
 end
