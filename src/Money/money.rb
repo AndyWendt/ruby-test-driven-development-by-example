@@ -5,7 +5,7 @@ module Money
     end
 
     def ==(money)
-      @amount === money.amount
+      @amount === money.amount && money.class.name === self.class.name
     end
   end
 
