@@ -7,7 +7,7 @@ module Money
     end
 
     def times(multiplier)
-      @amount = 10
+      @amount = amount * 2
     end
   end
 end
