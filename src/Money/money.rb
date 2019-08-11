@@ -3,6 +3,10 @@ module Money
     def initialize(amount)
       @amount = amount
     end
+
+    def ==(dollar)
+      @amount === dollar.amount
+    end
   end
 
   class Dollar < Money
@@ -10,10 +14,6 @@ module Money
 
     def times(multiplier)
       Dollar.new(@amount * multiplier)
-    end
-
-    def ==(dollar)
-      @amount === dollar.amount
     end
   end
 
