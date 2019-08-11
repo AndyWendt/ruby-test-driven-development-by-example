@@ -18,10 +18,8 @@ RSpec.describe 'Money' do
     end
 
     it 'compares equality' do
-      expect(::Money::Dollar.new(5)
-                 .eq?(::Money::Dollar.new(5))).to eq(true)
-      expect(::Money::Dollar.new(5)
-                 .eq?(::Money::Dollar.new(6))).to eq(false)
+      expect(::Money::Dollar.new(5) == ::Money::Dollar.new(5)).to eq(true)
+      expect(::Money::Dollar.new(5) == ::Money::Dollar.new(6)).to eq(false)
     end
   end
 
